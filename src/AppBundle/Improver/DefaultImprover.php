@@ -15,9 +15,6 @@ class DefaultImprover
     protected $itemContent;
     protected $client;
 
-    /**
-     * @param HttpMethodsClientInterface $client
-     */
     public function __construct(HttpMethodsClientInterface $client)
     {
         $this->client = $client;
@@ -87,7 +84,7 @@ class DefaultImprover
         $url = strtok($url, '?');
 
         if (empty($newQuery)) {
-            return $url;
+            return (string) $url;
         }
 
         // re-add allowed parameters

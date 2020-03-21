@@ -13,21 +13,33 @@ services:
     # autowire
     AppBundle\:
         resource: '../../src/AppBundle/*'
-        exclude: '../../src/AppBundle/{Document,DataFixtures,Converter,DomDocument,Extractor,Improver,Parser}'
+        exclude: '../../src/AppBundle/{Entity,DataFixtures,Converter,DomDocument,Extractor,Improver,Parser}'
 
     AppBundle\Xml\Render:
         arguments:
             $generator: "%domain%"
 
     AppBundle\Command\FetchItemsCommand:
+        tags: ['console.command']
         arguments:
             $domain: "%domain%"
 
-    AppBundle\EventListener\FeedItemSubscriber:
+    AppBundle\Command\RemoveItemsCommand:
+        tags: ['console.command']
+
+    AppBundle\Consumer\FetchItems:
+        arguments:
+            $domain: "%domain%"
+
+    AppBundle\EventListener\ItemSubscriber:
         arguments:
             $hub: "http://pubsubhubbub.appspot.com"
         tags:
             - { name: kernel.event_listener, event: app.after_item_cached, method: pingHub }
+
+    AppBundle\EventListener\FeedSubscriber:
+        tags:
+            - { name: kernel.event_listener, event: app.after_feed_creation, method: sync }
 
     AppBundle\Xml\SimplePieProxy:
         arguments:
@@ -38,14 +50,6 @@ services:
     AppBundle\Validator\Constraints\ConstraintRssValidator:
         tags:
             - { name: validator.constraint_validator, alias: valid_rss }
-
-    # https://coderwall.com/p/4gamjq
-    feed.converter.doctrine.mongodb:
-        class: Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter
-        arguments:
-            - "@doctrine_mongodb"
-        tags:
-            - { name: request.param_converter }
 
     # external service
     imgur.client:
@@ -97,5 +101,36 @@ services:
         arguments:
             - "[%%datetime%%] %%start_tag%%%%message%%%%end_tag%% %%context%% %%extra%%\n"
 
-
     Http\Client\Common\HttpMethodsClientInterface: '@httplug.client.default.http_methods'
+
+    # alias to service from their class name
+    Swarrot\SwarrotBundle\Broker\Publisher:
+        alias: swarrot.publisher
+
+    content_extractor:
+        class: AppBundle\Content\Extractor
+        arguments:
+            - "@feed.extractor.chain"
+            - "@feed.improver.chain"
+            - "@feed.converter.chain"
+            - "@feed.parser.chain"
+
+    simple_pie_proxy:
+        class: AppBundle\Xml\SimplePieProxy
+        arguments:
+            - "%kernel.root_dir%/cache/simplepie/"
+            - 20
+            - false
+
+    xml_render:
+        class: AppBundle\Xml\Render
+        arguments:
+            - "%domain%"
+
+    # validator
+    validator.rss.valid_rss:
+        class: AppBundle\Validator\Constraints\ConstraintRssValidator
+        arguments:
+            - "@httplug.client.default.http_methods"
+        tags:
+            - { name: validator.constraint_validator, alias: valid_rss }

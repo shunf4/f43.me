@@ -182,7 +182,7 @@ class FeedControllerTest extends FeedWebTestCase
 
         $crawler = $client->followRedirect();
         $this->assertCount(1, $alert = $crawler->filter('div.alert-box')->extract(['_text']));
-        $this->assertSame('Document created!', $alert[0]);
+        $this->assertSame('Feed created!', $alert[0]);
     }
 
     public function testFeedEditBadSlug()
@@ -277,7 +277,7 @@ class FeedControllerTest extends FeedWebTestCase
 
         $crawler = $client->followRedirect();
         $this->assertCount(1, $alert = $crawler->filter('div.alert-box')->extract(['_text']));
-        $this->assertSame('Document updated!', $alert[0]);
+        $this->assertSame('Feed updated!', $alert[0]);
     }
 
     public function testFeedUpdateBadSlug()
@@ -332,7 +332,7 @@ class FeedControllerTest extends FeedWebTestCase
 
         $crawler = $client->followRedirect();
         $this->assertCount(1, $alert = $crawler->filter('div.alert-box')->extract(['_text']));
-        $this->assertSame('Document deleted!', $alert[0]);
+        $this->assertSame('Feed deleted!', $alert[0]);
     }
 
     public function testInvalidFeed()
@@ -356,7 +356,7 @@ class FeedControllerTest extends FeedWebTestCase
         libxml_use_internal_errors(true);
 
         $xml = new \DOMDocument();
-        $xml->loadXML($client->getResponse()->getContent());
+        $xml->loadXML((string) $client->getResponse()->getContent());
 
         $errors = libxml_get_errors();
         $this->assertEmpty($errors, var_export($errors, true));
@@ -394,7 +394,7 @@ class FeedControllerTest extends FeedWebTestCase
         libxml_use_internal_errors(true);
 
         $xml = new \DOMDocument();
-        $xml->loadXML($client->getResponse()->getContent());
+        $xml->loadXML((string) $client->getResponse()->getContent());
 
         $errors = libxml_get_errors();
         $this->assertEmpty($errors, var_export($errors, true));

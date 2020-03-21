@@ -20,7 +20,9 @@ npm install --registry=https://registry.npm.taobao.org
 ./node_modules/gulp/bin/gulp.js
 
 echo "Setup database..."
-php bin/console doctrine:mongodb:schema:create
+php bin/console doctrine:database:create --if-not-exists
+php bin/console doctrine:schema:drop --force
+php bin/console doctrine:schema:create
 
 echo "Ready 🚀 http://localhost:58100/app_dev.php/"
 exec nginx -g 'daemon off;'

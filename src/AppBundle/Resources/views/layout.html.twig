@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" href="{{ asset('/build/main.css') }}" />
 
+    <link rel="preconnect" href="https://s2.googleusercontent.com">
+
     <script type="text/javascript" src="{{ asset('/build/zepto.modernizr.js') }}"></script>
 </head>
 <body>
@@ -36,7 +38,7 @@
                     </li>
                     <li class="divider"></li>
                     <li {% if menu is defined and 'log' == menu %}class="active"{% endif %}>
-                        <a href="{{ path('feedlog_homepage') }}">Feed logs</a>
+                        <a href="{{ path('log_homepage') }}">Feed logs</a>
                     </li>
                     <li class="divider"></li>
                     <li {% if menu is defined and 'test' == menu %}class="active"{% endif %}>

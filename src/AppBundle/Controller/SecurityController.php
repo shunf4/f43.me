@@ -7,17 +7,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
-/**
- * Security controller.
- */
 class SecurityController extends Controller
 {
     /**
      * Display some information about feeds, items, logs, etc ...
      *
+     * @Route("/login", name="login", methods={"GET"})
      * @Template()
      *
      * @return Response|RedirectResponse
