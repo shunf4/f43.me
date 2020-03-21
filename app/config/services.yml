@@ -58,6 +58,13 @@ services:
         class: Graby\Graby
         arguments:
             -
+                http_client:
+                    ua_browser: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+                    rewrite_url:
+                        'media.weibo.cn':
+                            'media.weibo.cn': 'openfaas.home.rivage.tk/function/selenium-ize/https://media.weibo.cn'
+                        'weibo.com':
+                            'weibo.com': 'weibo.cn'
                 error_message: false
                 extractor:
                     config_builder:

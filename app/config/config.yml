@@ -79,7 +79,8 @@ httplug:
             factory: 'httplug.factory.guzzle6'
             config:
                 defaults:
-                    timeout: 10
+                    timeout: 30
+                    proxy: 'http://localhost:8079' 
             http_methods_client: true
             plugins:
                 - 'httplug.plugin.redirect'

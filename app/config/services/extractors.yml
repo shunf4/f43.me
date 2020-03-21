@@ -73,16 +73,16 @@ services:
         tags:
             -  { name: feed.extractor, alias: flickr }
 
-    feed.extractor.github:
-        class: AppBundle\Extractor\Github
-        arguments:
-            - "%github.client_id%"
-            - "%github.client_secret%"
-        calls:
-            - [ setLogger, [ "@logger" ]]
-            - [ setClient, [ "@httplug.client.default.http_methods" ]]
-        tags:
-            -  { name: feed.extractor, alias: github }
+    #feed.extractor.github:
+    #    class: AppBundle\Extractor\Github
+    #    arguments:
+    #        - "%github.client_id%"
+    #        - "%github.client_secret%"
+    #    calls:
+    #        - [ setLogger, [ "@logger" ]]
+    #        - [ setClient, [ "@httplug.client.default.http_methods" ]]
+    #    tags:
+    #        -  { name: feed.extractor, alias: github }
 
     feed.extractor.deviantart:
         class: AppBundle\Extractor\Deviantart
