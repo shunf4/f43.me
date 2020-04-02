@@ -74,6 +74,7 @@ services:
                     config_builder:
                         site_config:
                             - "%kernel.root_dir%/site_config"
+            - "@httplug.client.default"
         calls:
             - [ setLogger, [ "@logger" ] ]
         tags:

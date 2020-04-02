@@ -42,7 +42,6 @@ class Feed
      * @ORM\Column(name="link", type="string")
      * @Assert\NotBlank()
      * @Assert\Url()
-     * @FeedAssert\ConstraintRss
      */
     protected $link;
 

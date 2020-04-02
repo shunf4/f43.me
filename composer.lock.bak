@@ -4225,7 +4225,7 @@
             "source": {
                 "type": "git",
                 "url": "../graby",
-                "reference": "3df0921e46c24988663228fbda3acc7f6e3aed06"
+                "reference": "d3485bdf5ab240a84b3319296d0dbdb97db0b205"
             },
             "require": {
                 "ext-curl": "*",
@@ -4241,7 +4241,7 @@
                 "php-http/httplug": "^2.0",
                 "php-http/message": "^1.7",
                 "psr/http-message": "^1.0",
-                "shunf4/graby-site-config": "dev-fs-private",
+                "shunf4/graby-site-config": "dev-fengshun",
                 "simplepie/simplepie": "^1.3.1",
                 "smalot/pdfparser": "~0.11",
                 "symfony/options-resolver": "~2.6|~3.0|~4.0",
@@ -4289,15 +4289,15 @@
                 }
             ],
             "description": "(shunf4's fork)Graby helps you extract article content from web pages",
-            "time": "2020-03-24T05:29:54+00:00"
+            "time": "2020-03-22T04:42:35+00:00"
         },
         {
             "name": "shunf4/graby-site-config",
-            "version": "dev-fs-private",
+            "version": "dev-fengshun",
             "source": {
                 "type": "git",
                 "url": "../ftr-site-config",
-                "reference": "7ac890786ef35c9eda20d1b0296e2c3e29752ccd"
+                "reference": "036108fbacfc1f7eb3a34282373dff1f55bb7f06"
             },
             "require": {
                 "symfony/finder": "~2.6|~3.0|~4.0"
@@ -4322,7 +4322,7 @@
                 }
             ],
             "description": "(shunf4's)Graby site config files",
-            "time": "2020-03-23T08:56:56+00:00"
+            "time": "2020-03-21T10:28:23+00:00"
         },
         {
             "name": "simplepie/simplepie",
