@@ -80,7 +80,7 @@ monolog:
         graby:
             type: service
             id: graby.log_handler
-            level: debug
+            level: info
             channels: ['graby']
 
 # see https://github.com/symfony/symfony-standard/pull/1133

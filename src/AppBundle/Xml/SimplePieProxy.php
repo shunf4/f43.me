@@ -13,7 +13,7 @@ class SimplePieProxy
      * @param int    $itemLimit   The maximum number of items to return
      * @param bool   $enableCache Enable caching
      */
-    public function __construct($cache, $itemLimit = 25, $enableCache = true)
+    public function __construct($cache, $itemLimit = 25, $enableCache = true, $proxyHost = '', $proxyPort = 0)
     {
         $this->feed = new \SimplePie();
         $this->feed->set_cache_location($cache);
@@ -22,6 +22,16 @@ class SimplePieProxy
         // Force the given URL to be treated as a feed
         $this->feed->force_feed(true);
         $this->feed->enable_cache($enableCache);
+
+        if (!empty($proxyHost) && $proxyPort != 0) {
+            $this->feed->set_curl_options(array(
+                CURLOPT_PROXYTYPE => CURLPROXY_HTTP,
+                CURLOPT_PROXY => $proxyHost,
+                CURLOPT_PROXYPORT => $proxyPort,
+                CURLOPT_PROXYAUTH => CURLAUTH_BASIC,
+                CURLOPT_PROXYUSERPWD => ''
+            ));
+        }
 
         // be sure that the cache is writable by SimplePie
         if ($enableCache && !is_writable($cache)) {

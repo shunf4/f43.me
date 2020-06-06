@@ -58,7 +58,7 @@ class Import
         $feedUpdated = [];
 
         foreach ($feeds as $feed) {
-            $this->logger->debug('<info>Working on</info>: ' . $feed->getName() . ' (parser: <comment>' . $feed->getParser() . '</comment>)');
+            $this->logger->info('<info>Working on</info>: ' . $feed->getName() . ' (parser: <comment>' . $feed->getParser() . '</comment>)');
 
             $rssFeed = $this
                 ->simplePieProxy
@@ -71,6 +71,8 @@ class Import
                 $this->em->persist($feed);
                 $this->em->flush();
             }
+
+            // $this->logger->debug(var_export($rssFeed, true));
 
             $parser = $this
                 ->extractor

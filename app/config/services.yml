@@ -46,6 +46,8 @@ services:
             $cache: "%kernel.root_dir%/cache/simplepie/"
             $itemLimit: 20
             $enableCache: false
+            $proxyHost: "127.0.0.1"
+            $proxyPort: 8079
 
     AppBundle\Validator\Constraints\ConstraintRssValidator:
         tags:
