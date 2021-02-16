@@ -40,7 +40,8 @@ class Options
             'scheme' => ['http', 'https'],
         ],
         'blacklist' => [
-            'ip' => [
+            'ip' => [],
+            'ip_x' => [
                 '0.0.0.0/8',
                 '10.0.0.0/8',
                 '100.64.0.0/10',
