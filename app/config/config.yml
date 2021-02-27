@@ -94,7 +94,7 @@ httplug:
             factory: 'httplug.factory.guzzle6'
             config: # distinguished from wallabag http factory, no need for {"defaults": ..
                 timeout: 30
-                proxy: 'http://127.0.0.1:8079' 
+                proxy: 'http://127.0.0.1:8118' 
             http_methods_client: true
             plugins:
                 - 'httplug.plugin.redirect'

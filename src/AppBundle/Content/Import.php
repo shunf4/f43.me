@@ -76,7 +76,7 @@ class Import
 
             $parser = $this
                 ->extractor
-                ->init($feed->getParser(), $feed, true);
+                ->init($feed->getParser(), $feed, false);
 
             $cachedLinks = $this->itemRepository->getAllLinks($feed->getId());
             $cached = 0;

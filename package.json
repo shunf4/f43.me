@@ -4,6 +4,7 @@
   "description": "A more readable & cleaner feed",
   "main": "gulpfile.js",
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,6 +17,9 @@
     "url": "https://github.com/j0k3r/f43.me/issues"
   },
   "homepage": "https://github.com/j0k3r/f43.me",
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
+  },
   "dependencies": {
     "gulp": "~3.9.1",
     "gulp-util": "~3.0",

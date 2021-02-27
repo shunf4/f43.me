@@ -26,7 +26,7 @@
 /data/mysql
 .phpunit.result.cache
 
-# fengshun
+# shunf4 mod
 /vendor/*
 !/vendor/j0k3r/
 /vendor/j0k3r/*

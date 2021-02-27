@@ -16,7 +16,7 @@ prepare:
 	rm -rf build
 	mkdir -p build/coverage
 	mkdir -p build/logs
-	composer install --no-interaction -o --prefer-dist
+	COMPOSER_MEMORY_LIMIT=-1 composer install --no-interaction -o --prefer-dist
 	php bin/console doctrine:database:create --env=test --if-not-exists
 	php bin/console doctrine:schema:drop --force --env=test
 	php bin/console doctrine:schema:create --env=test

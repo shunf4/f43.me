@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo chown riv:riv -R .
-sudo chown www-data:riv -R ./var
+sudo chown rivaaggg:rivaaggg -R .
+sudo chown www-data:rivaaggg -R ./var
 sudo chmod g+w -R ./var
 
