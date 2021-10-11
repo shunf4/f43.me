@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d1baf417080746b5c749cc419d9879d",
+    "content-hash": "d6ffecbba19d9939f1c62fa61bfb8911",
     "packages": [
         {
             "name": "beberlei/doctrineextensions",
@@ -5030,7 +5030,7 @@
             "source": {
                 "type": "git",
                 "url": "../graby",
-                "reference": "a88881f02ae40586d7650117b7ff215a629adc80"
+                "reference": "5990b27aaf895e76f7654a7e8ffa03075ec21da5"
             },
             "require": {
                 "ext-curl": "*",
@@ -5046,7 +5046,7 @@
                 "php-http/httplug": "^2.2",
                 "php-http/message": "^1.9",
                 "shunf4/graby-site-config": "dev-shunf4_mod",
-                "simplepie/simplepie": "^1.5",
+                "shunf4/simplepie": "dev-shunf4_mod",
                 "smalot/pdfparser": "~0.16",
                 "symfony/options-resolver": "^3.4|^4.0|^5.0",
                 "true/punycode": "^2.1"
@@ -5095,7 +5095,7 @@
                 }
             ],
             "description": "(shunf4's fork)Graby helps you extract article content from web pages",
-            "time": "2021-02-27T07:41:45+00:00"
+            "time": "2021-10-11T07:39:11+00:00"
         },
         {
             "name": "shunf4/graby-site-config",
@@ -5132,17 +5132,17 @@
             "time": "2021-02-27T13:19:55+00:00"
         },
         {
-            "name": "simplepie/simplepie",
-            "version": "1.5.6",
+            "name": "shunf4/simplepie",
+            "version": "dev-shunf4_mod",
             "source": {
                 "type": "git",
-                "url": "https://github.com/simplepie/simplepie.git",
-                "reference": "1c68e14ca3ac84346b6e6fe3c5eedf725d0f92c6"
+                "url": "https://github.com/shunf4/simplepie.git",
+                "reference": "e2ef8f0a67f9eb383021778ea8f23939fe0a7f62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/simplepie/simplepie/zipball/1c68e14ca3ac84346b6e6fe3c5eedf725d0f92c6",
-                "reference": "1c68e14ca3ac84346b6e6fe3c5eedf725d0f92c6",
+                "url": "https://api.github.com/repos/shunf4/simplepie/zipball/e2ef8f0a67f9eb383021778ea8f23939fe0a7f62",
+                "reference": "e2ef8f0a67f9eb383021778ea8f23939fe0a7f62",
                 "shasum": ""
             },
             "require": {
@@ -5152,7 +5152,7 @@
                 "php": ">=5.6.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~5.4.3 || ~6.5"
+                "yoast/phpunit-polyfills": "^1.0.1"
             },
             "suggest": {
                 "ext-curl": "",
@@ -5161,13 +5161,18 @@
                 "ext-mbstring": "",
                 "mf2/mf2": "Microformat module that allows for parsing HTML for microformats"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-0": {
                     "SimplePie": "library"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ]
+            },
             "license": [
                 "BSD-3-Clause"
             ],
@@ -5197,10 +5202,9 @@
                 "rss"
             ],
             "support": {
-                "issues": "https://github.com/simplepie/simplepie/issues",
-                "source": "https://github.com/simplepie/simplepie/tree/1.5.6"
+                "source": "https://github.com/shunf4/simplepie/tree/shunf4_mod"
             },
-            "time": "2020-10-14T07:17:22+00:00"
+            "time": "2021-10-11T07:35:56+00:00"
         },
         {
             "name": "smalot/pdfparser",
@@ -9002,7 +9006,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "shunf4/graby": 20
+        "shunf4/graby": 20,
+        "shunf4/simplepie": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

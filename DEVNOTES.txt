@@ -1,0 +1,6 @@
+
+fq COMPOSER_MEMORY_LIMIT=-1 SYMFONY_ENV=prod ENV=prod composer config repositories.foo vcs https://github.com/shunf4/simplepie
+
+fq COMPOSER_MEMORY_LIMIT=-1 SYMFONY_ENV=prod ENV=prod composer update shunf4/graby
+fq COMPOSER_MEMORY_LIMIT=-1 SYMFONY_ENV=prod ENV=prod composer remove simplepie/simplepie
+fq COMPOSER_MEMORY_LIMIT=-1 SYMFONY_ENV=prod ENV=prod composer require shunf4/simplepie:dev-shunf4_mod
