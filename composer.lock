@@ -5137,12 +5137,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/shunf4/simplepie.git",
-                "reference": "e2ef8f0a67f9eb383021778ea8f23939fe0a7f62"
+                "reference": "c5c67507e31a4974a03b4076c2c1876c5e29f2ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shunf4/simplepie/zipball/e2ef8f0a67f9eb383021778ea8f23939fe0a7f62",
-                "reference": "e2ef8f0a67f9eb383021778ea8f23939fe0a7f62",
+                "url": "https://api.github.com/repos/shunf4/simplepie/zipball/c5c67507e31a4974a03b4076c2c1876c5e29f2ac",
+                "reference": "c5c67507e31a4974a03b4076c2c1876c5e29f2ac",
                 "shasum": ""
             },
             "require": {
@@ -5204,7 +5204,7 @@
             "support": {
                 "source": "https://github.com/shunf4/simplepie/tree/shunf4_mod"
             },
-            "time": "2021-10-11T07:35:56+00:00"
+            "time": "2021-10-11T07:56:05+00:00"
         },
         {
             "name": "smalot/pdfparser",

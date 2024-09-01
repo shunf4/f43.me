@@ -15,14 +15,15 @@ monolog:
     handlers:
         main:
             type: fingers_crossed
-            action_level: debug
+              # action_level: debug
+            action_level: info
             handler: streamed_main
             excluded_404s:
                 - ^/
         streamed_main:
             type: stream
             path: "%kernel.logs_dir%/%kernel.environment%.log"
-            level: debug
+            level: info
         console:
             type: console
             process_psr_3_messages: false
